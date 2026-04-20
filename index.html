@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Приглашение на свадьбу | Анастасия & Илья</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Подключи здесь свои шрифты (замени на реальные названия) -->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&display=swap"
+    />
+  </head>
+  <body>
+    <!-- Фиксированная шапка -->
+    <header class="site-header">
+      <div class="header-inner">
+        <!-- Левая часть: сердце -->
+        <div class="header-left">
+          <span class="heart-icon">♡</span>
+        </div>
+
+        <!-- Правая часть: музыка + меню -->
+        <div class="header-right">
+          <!-- Тумблер музыки -->
+          <div onclick="toggleMusic()" class="music-toggle" id="musicToggle">
+            <span id="musicIcon" class="music-icon">♪</span>
+          </div>
+
+          <!-- Кнопка меню (можно сделать функционал позже) -->
+          <div class="menu-button" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <div class="menu-sidebar" id="menu">
+        <a href="#home" class="menu-link">
+            <img src="images/home.png" class="menu-icon" />
+            <span>Главная</span>
+          </a>
+        
+          <a href="#plan" class="menu-link">
+            <img src="images/plan.png" class="menu-icon" />
+            <span>План дня</span>
+          </a>
+        
+          <a href="#date" class="menu-link">
+            <img src="images/date.png" class="menu-icon" />
+            <span>Дата</span>
+          </a>
+        
+          <a href="#dress" class="menu-link">
+            <img src="images/dress.png" class="menu-icon" />
+            <span>Дресс-код</span>
+          </a>
+        
+          <a href="#gifts" class="menu-link">
+            <img src="images/gift.png" class="menu-icon" />
+            <span>Детали</span>
+          </a>
+        
+          <a href="#place" class="menu-link">
+            <img src="images/place.png" class="menu-icon" />
+            <span>Место</span>
+          </a>
+        
+          <a href="#contacts" class="menu-link">
+            <img src="images/contacts.png" class="menu-icon" />
+            <span>Контакты</span>
+          </a>
+    </div>
+    <div id="welcomeScreen" class="welcome-screen">
+      <div class="welcome-content animate">
+        <!-- Конверт -->
+        <div class="envelope-icon animate">✉️</div>
+
+        <!-- Основной текст -->
+        <h1 class="welcome-title animate">ВАС ПРИГЛАСИЛИ<br />НА СВАДЬБУ</h1>
+
+        <!-- Кнопка -->
+        <button onclick="openInvitation(event)" class="open-button">
+          ОТКРЫТЬ ПРИГЛАШЕНИЕ
+        </button>
+
+        <p class="welcome-hint">Нажмите кнопку, чтобы продолжить</p>
+      </div>
+    </div>
+    <main class="container">
+      <!-- Caplink + Save The Date + Фото -->
+      <section class="hero animate" id="home">
+        <div class="photo-container">
+          <img
+            src="images/hero.jpg"
+            alt="Фото жениха и невесты"
+            class="couple-photo"
+          />
+          <div class="save-date-overlay">
+            <p class="save-the-date">Save The Date</p>
+            <h1 class="names">Анастасия & Илья</h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- Дорогие гости! -->
+      <section class="welcome animate">
+        <h2 class="script-font">Дорогие гости!</h2>
+        <p class="text-block">
+          Мы будем счастливы разделить с вами день, наполненный любовью, теплом
+          и радостными моментами. С нетерпением ждём вас, чтобы вместе создать
+          воспоминания, которые останутся с нами навсегда.
+        </p>
+        <div class="calendar-block animate" id="date">
+          <h2 class="month">Июль</h2>
+          <img src="images/calendar.png" alt="Календарь" class="calendar-img" />
+        </div>
+      </section>
+
+      <!-- Программа дня -->
+      <section class="program animate" id="plan">
+        <h2 class="script-font">Программа дня</h2>
+        <div class="program-box">
+          <p class="text-el">
+            <strong class="text-str">13:00</strong><br />
+            Венчание
+          </p>
+          <p>
+            <strong class="text-str">15:00</strong> <br />Церемония
+            бракосчетания
+          </p>
+          <p><strong class="text-str">18:00</strong> <br />Праздничный ужин</p>
+          <p><strong class="text-str">20:00</strong> <br />Торт и танцы</p>
+        </div>
+      </section>
+
+      <!-- Дресс-код -->
+      <section class="dress-code animate" id="dress">
+        <h2 class="script-font">Дресс-код</h2>
+        <p>
+          Нам будет приятно, если ваши образы поддержат атмосферу нашего дня
+        </p>
+
+        <div class="dress-icons">
+          <img
+            src="images/dresscode-icons.png"
+            alt="Дресс-код"
+            class="dress-icons-img"
+          />
+        </div>
+      </section>
+
+      <!-- Детали -->
+      <section class="details animate" id="gifts">
+        <h2 class="script-font">Детали</h2>
+        <p>
+          Просим подтвердить ваше присутствие до 31 мая. Ваши вопросы и
+          пожелания ждем в личных сообщениях. Главным подарком для нас станет
+          ваше внимание, а если вы захотите выразить его материально — будем
+          рады подаркам в конвертах
+        </p>
+        <h2 class="script-light">Место торжества</h2>
+      </section>
+
+      <!-- Место торжества -->
+      <section class="venue animate full-width" id="place">
+        <p class="paragraph">
+          Сбор гостей состоится в&nbsp;ЗАГСе города Ливны, расположенном
+          по&nbsp;адресу: ул.&nbsp;Горького,&nbsp;д.&nbsp;18
+        </p>
+        <a
+          href="https://maps.app.goo.gl/LkitykV2Tk5EZMD99"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="map-btn"
+          >посмотреть карту</a
+        >
+      </section>
+      <section class="countdown animate full-width">
+        <h2 class="script-font countdown-title">
+          Ждём вас
+          <span class="countdown-sub">через...</span>
+        </h2>
+        <div class="timer">
+          <div class="time-box">
+            <span id="days" class="time-date">00</span>
+            <p>Дней</p>
+          </div>
+          <div class="time-box">
+            <span id="hours" class="time-date">00</span>
+            <p>Часов</p>
+          </div>
+          <div class="time-box">
+            <span id="minutes" class="time-date">00</span>
+            <p>Минут</p>
+          </div>
+          <div class="time-box">
+            <span id="seconds" class="time-date">00</span>
+            <p>Секунд</p>
+          </div>
+        </div>
+      </section>
+      <section class="contacts animate" id="contacts">
+        <h2 class="script-font">Контакты</h2>
+
+        <div class="contacts-list">
+          <div class="contact-item">
+            <p class="contact-name">Невеста</p>
+            <div class="contact-row">
+              <a href="tel:+79521018101" class="contact-phone">
+                +7 (952) 101-81-01
+              </a>
+
+              <a
+                href="https://vk.com/n.belyanova"
+                target="_blank"
+                class="contact-vk"
+                aria-label="VK Невеста"
+              >
+                <img src="images/vk.png" alt="VK" class="vk-icon" />
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <p class="contact-name">Жених</p>
+            <div class="contact-row">
+              <a href="tel:+79155078418" class="contact-phone">
+                +7 (915) 507-84-18
+              </a>
+
+              <a
+                href="https://vk.com/id304968142"
+                target="_blank"
+                class="contact-vk"
+                aria-label="VK Жених"
+              >
+                <img src="images/vk.png" alt="VK" class="vk-icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <audio id="boomSound" preload="auto">
+        <source src="music/boom.mp3" type="audio/mpeg" />
+      </audio>
+
+    <audio id="weddingMusic" loop preload="auto">
+      <source src="music/wedding-song.mp3" type="audio/mpeg" />
+      Ваш браузер не поддерживает аудио.
+    </audio>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script>
+      const audio = document.getElementById("weddingMusic");
+      let isMusicPlaying = false; // начинаем с выключенной
+      audio.volume = 0.1; // от 0 до 1 (0.2 = тихо, 0.5 = средне)
+
+      // Переключение музыки
+      function toggleMusic() {
+        const toggleEl = document.getElementById("musicToggle");
+
+        isMusicPlaying = !isMusicPlaying;
+
+        if (isMusicPlaying) {
+          audio
+            .play()
+            .catch(() => console.log("Воспроизведение заблокировано"));
+          toggleEl.classList.remove("muted");
+        } else {
+          audio.pause();
+          toggleEl.classList.add("muted");
+        }
+      }
+
+      function openInvitation(event) {
+        // 👉 ВСЕГДА возвращаем страницу наверх
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+        const x = window.innerWidth / 2;
+        const y = window.innerHeight / 2;
+
+        createHeartExplosion(x, y);
+
+        const welcomeScreen = document.getElementById("welcomeScreen");
+
+        welcomeScreen.style.transition = "opacity 1.2s ease";
+        welcomeScreen.style.opacity = "0";
+
+        setTimeout(() => {
+          welcomeScreen.style.display = "none";
+
+          // музыка стартует
+          if (!isMusicPlaying) {
+            isMusicPlaying = true;
+            audio.play().catch(() => {});
+            document.getElementById("musicToggle").classList.remove("muted");
+          }
+        }, 1200);
+        setTimeout(() => {
+          document.querySelector(".photo-container").classList.add("show");
+        }, 50);
+      }
+    </script>
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        {
+          threshold: 0.15,
+        }
+      );
+
+      document.querySelectorAll(".animate").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+    <script>
+      const weddingDate = new Date("2026-07-24 14:30:00").getTime(); // ← поменяй дату
+
+      function updateTimer() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        if (distance <= 0) {
+          document.getElementById("days").innerText = "00";
+          document.getElementById("hours").innerText = "00";
+          document.getElementById("minutes").innerText = "00";
+          document.getElementById("seconds").innerText = "00";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((distance / (1000 * 60)) % 60);
+        const seconds = Math.floor((distance / 1000) % 60);
+
+        document.getElementById("days").innerText = String(days).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("hours").innerText = String(hours).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("minutes").innerText = String(minutes).padStart(
+          2,
+          "0"
+        );
+        document.getElementById("seconds").innerText = String(seconds).padStart(
+          2,
+          "0"
+        );
+      }
+
+      setInterval(updateTimer, 1000);
+      updateTimer();
+    </script>
+    <script>
+      function createHeartExplosion(x, y) {
+        const originX = x / window.innerWidth;
+        const originY = y / window.innerHeight;
+
+        const heart = confetti.shapeFromPath({
+          path: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z",
+        });
+
+        confetti({
+          particleCount: 120,
+          spread: 160,
+          startVelocity: 55,
+          origin: { x: originX, y: originY },
+          colors: ["#7a0f1e", "#b11226", "#e11d48", "#ff4d6d"],
+          scalar: 1.1,
+          gravity: 0.9,
+          ticks: 220,
+          shapes: [heart],
+        });
+
+        setTimeout(() => {
+          confetti({
+            particleCount: 60,
+            spread: 200,
+            startVelocity: 30,
+            origin: { x: originX, y: originY },
+            colors: ["#7a0f1e", "#e11d48"],
+            scalar: 0.9,
+            gravity: 1.2,
+            ticks: 180,
+            shapes: [heart],
+          });
+        }, 120);
+      }
+    </script>
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("menu");
+        const overlay = document.getElementById("overlay");
+
+        menu.classList.toggle("active");
+        overlay.classList.toggle("active");
+      }
+
+      // закрытие по ссылке
+      document.querySelectorAll(".menu-sidebar a").forEach((link) => {
+        link.addEventListener("click", () => {
+          document.getElementById("menu").classList.remove("active");
+          document.getElementById("overlay").classList.remove("active");
+        });
+      });
+    </script>
+    <script>
+        const heart = document.querySelector(".heart-icon");
+        
+        // восстановление состояния
+        const savedState = localStorage.getItem("heartActive");
+        
+        if (savedState === "true") {
+          heart.classList.add("active");
+          heart.textContent = "❤️";
+        }
+        
+        heart.addEventListener("click", () => {
+          const isActive = heart.classList.toggle("active");
+        
+          heart.textContent = isActive ? "❤️" : "♡";
+        
+          localStorage.setItem("heartActive", isActive);
+        });
+        </script>
+  </body>
+</html>

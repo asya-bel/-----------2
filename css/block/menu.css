@@ -1,0 +1,157 @@
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+.menu-button {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: transform 0.25s ease;
+}
+
+/* полоски */
+.menu-button span {
+  width: 24px;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+  transition: background 0.25s ease;
+}
+
+/* hover эффект */
+.menu-button:hover {
+  transform: scale(1.1);
+}
+
+.menu-button:hover span {
+  background: #7f866a; /* можешь поменять на свой акцентный цвет */
+}
+
+/* затемнение фона */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+
+  z-index: 10000;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* сам сайдбар */
+.menu-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  gap: 16px;
+
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+
+  z-index: 10001;
+}
+
+.menu-sidebar.active {
+  transform: translateX(0);
+}
+
+.menu-sidebar a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+
+    padding: 14px 12px;
+    border-radius: 12px;
+
+    transition: all 0.25s ease;
+    overflow: hidden;
+}
+
+/* мягкий световой фон */
+.menu-sidebar a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at left center,
+        rgba(74, 124, 80, 0.12),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* линия слева */
+.menu-sidebar a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0%;
+    background: #4a7c50;
+    border-radius: 4px;
+    transition: height 0.3s ease;
+}
+
+/* hover эффект */
+.menu-sidebar a:hover {
+    background: #f7f7f7;
+    transform: translateX(8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.menu-sidebar a:hover::after {
+    opacity: 1;
+}
+
+.menu-sidebar a:hover::before {
+    height: 65%;
+}
+
+/* текст */
+.menu-sidebar a:hover {
+    color: #4a7c50;
+}
+
+.menu-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.menu-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-link:hover {
+  background-color: #d7d7d7;
+}

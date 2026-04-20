@@ -1,0 +1,41 @@
+.countdown {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.script-font {
+    font-family: "Foros", serif;
+}
+
+.timer {
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background-color: #7f866a;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.65);
+    padding: 20px;
+}
+
+.time-box {
+    text-align: center;
+}
+
+.time-box span {
+    font-size: 60px;
+    font-weight: 300;
+    display: block;
+}
+
+.time-box p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.time-date {
+    color: #fff;
+}
+

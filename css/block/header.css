@@ -1,0 +1,85 @@
+/* ====================== ФИКСИРОВАННАЯ ШАПКА ====================== */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000; /* ← ВАЖНО: оставить выше, но не 9999 */
+    border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+    max-width: 480px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+/* Левая часть - сердце */
+.header-left .heart-icon {
+    font-size: 28px;
+    color: black;
+    line-height: 1;
+}
+
+/* Правая часть */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Тумблер музыки */
+.music-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f8f8f8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+}
+
+.music-toggle:hover {
+    background: #f0f0f0;
+    transform: scale(1.08);
+}
+
+.music-icon {
+    font-size: 22px;
+    color: #555;
+    transition: all 0.4s ease;
+}
+
+/* Когда музыка выключена */
+.music-toggle.muted .music-icon {
+    color: #999;
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Кнопка меню (три полоски) */
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.menu-button span {
+    width: 24px;
+    height: 2px;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}

@@ -1,0 +1,32 @@
+.heart-icon {
+    font-size: 28px;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* активное состояние */
+.heart-icon.active {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 10px rgba(225, 29, 72, 0.6));
+}
+
+/* мягкий “пульс” при включении */
+.heart-icon.active {
+    animation: heartGlow 0.6s ease;
+}
+
+@keyframes heartGlow {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 rgba(225, 29, 72, 0));
+    }
+    40% {
+        transform: scale(1.35);
+        filter: drop-shadow(0 0 12px rgba(225, 29, 72, 0.7));
+    }
+    100% {
+        transform: scale(1.25);
+        filter: drop-shadow(0 0 10px rgba(225, 29, 72, 0.6));
+    }
+}
