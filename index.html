@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Приглашение на свадьбу | Анастасия & Илья</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="/images/img.png" type="image/png" />
+
+    <meta
+      property="og:title"
+      content="Приглашение на свадьбу | Анастасия & Илья"
+    />
+    <meta
+      property="og:description"
+      content="24 июля 2026 • Будем рады разделить этот день с вами 💍"
+    />
+    <meta
+      property="og:image"
+      content="https://asya-bel.github.io/wedding-invite/images/preview.png"
+    />
+    <meta property="og:url" content="https://asya-bel.github.io/wedding-invite/" />
+    <meta property="og:type" content="website" />
 
     <!-- Подключи здесь свои шрифты (замени на реальные названия) -->
     <link
@@ -40,40 +56,40 @@
     <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
 
     <div class="menu-sidebar" id="menu">
-        <a href="#home" class="menu-link">
-            <img src="images/home.png" class="menu-icon" />
-            <span>Главная</span>
-          </a>
-        
-          <a href="#plan" class="menu-link">
-            <img src="images/plan.png" class="menu-icon" />
-            <span>План дня</span>
-          </a>
-        
-          <a href="#date" class="menu-link">
-            <img src="images/date.png" class="menu-icon" />
-            <span>Дата</span>
-          </a>
-        
-          <a href="#dress" class="menu-link">
-            <img src="images/dress.png" class="menu-icon" />
-            <span>Дресс-код</span>
-          </a>
-        
-          <a href="#gifts" class="menu-link">
-            <img src="images/gift.png" class="menu-icon" />
-            <span>Детали</span>
-          </a>
-        
-          <a href="#place" class="menu-link">
-            <img src="images/place.png" class="menu-icon" />
-            <span>Место</span>
-          </a>
-        
-          <a href="#contacts" class="menu-link">
-            <img src="images/contacts.png" class="menu-icon" />
-            <span>Контакты</span>
-          </a>
+      <a href="#home" class="menu-link">
+        <img src="images/home.png" class="menu-icon" />
+        <span>Главная</span>
+      </a>
+
+      <a href="#plan" class="menu-link">
+        <img src="images/plan.png" class="menu-icon" />
+        <span>План дня</span>
+      </a>
+
+      <a href="#date" class="menu-link">
+        <img src="images/date.png" class="menu-icon" />
+        <span>Дата</span>
+      </a>
+
+      <a href="#dress" class="menu-link">
+        <img src="images/dress.png" class="menu-icon" />
+        <span>Дресс-код</span>
+      </a>
+
+      <a href="#gifts" class="menu-link">
+        <img src="images/gift.png" class="menu-icon" />
+        <span>Детали</span>
+      </a>
+
+      <a href="#place" class="menu-link">
+        <img src="images/place.png" class="menu-icon" />
+        <span>Место</span>
+      </a>
+
+      <a href="#contacts" class="menu-link">
+        <img src="images/contacts.png" class="menu-icon" />
+        <span>Контакты</span>
+      </a>
     </div>
     <div id="welcomeScreen" class="welcome-screen">
       <div class="welcome-content animate">
@@ -136,7 +152,11 @@
           <p><strong class="text-str">18:00</strong> <br />Праздничный ужин</p>
           <p><strong class="text-str">20:00</strong> <br />Торт и танцы</p>
         </div>
-        <img src="images/sticker.png" alt="Фоновое изображение" class="plan-img"/>
+        <img
+          src="images/sticker.png"
+          alt="Фоновое изображение"
+          class="plan-img"
+        />
       </section>
 
       <!-- Дресс-код -->
@@ -180,7 +200,11 @@
           class="map-btn"
           >посмотреть карту</a
         >
-        <img src="images/fon.jpg" alt="Фоновое изображение" class="script-font-img"/>
+        <img
+          src="images/fon.jpg"
+          alt="Фоновое изображение"
+          class="script-font-img"
+        />
       </section>
       <section class="countdown animate full-width">
         <h2 class="script-font countdown-title">
@@ -249,8 +273,8 @@
       </section>
     </main>
     <audio id="boomSound" preload="auto">
-        <source src="music/boom.mp3" type="audio/mpeg" />
-      </audio>
+      <source src="music/boom.mp3" type="audio/mpeg" />
+    </audio>
 
     <audio id="weddingMusic" loop preload="auto">
       <source src="music/wedding-song.mp3" type="audio/mpeg" />
@@ -421,23 +445,23 @@
       });
     </script>
     <script>
-        const heart = document.querySelector(".heart-icon");
-        
-        // восстановление состояния
-        const savedState = localStorage.getItem("heartActive");
-        
-        if (savedState === "true") {
-          heart.classList.add("active");
-          heart.textContent = "❤️";
-        }
-        
-        heart.addEventListener("click", () => {
-          const isActive = heart.classList.toggle("active");
-        
-          heart.textContent = isActive ? "❤️" : "♡";
-        
-          localStorage.setItem("heartActive", isActive);
-        });
-        </script>
+      const heart = document.querySelector(".heart-icon");
+
+      // восстановление состояния
+      const savedState = localStorage.getItem("heartActive");
+
+      if (savedState === "true") {
+        heart.classList.add("active");
+        heart.textContent = "❤️";
+      }
+
+      heart.addEventListener("click", () => {
+        const isActive = heart.classList.toggle("active");
+
+        heart.textContent = isActive ? "❤️" : "♡";
+
+        localStorage.setItem("heartActive", isActive);
+      });
+    </script>
   </body>
 </html>
