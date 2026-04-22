@@ -24,7 +24,7 @@
 }
 
 .time-box span {
-    max-font-size: 60px;
+    font-size: 60px;
     font-weight: 300;
     display: block;
 }
